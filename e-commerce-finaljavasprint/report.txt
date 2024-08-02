@@ -1,0 +1,112 @@
+. USER DOCUMENTATION
+
+    Introduction
+This document describes our e-commerce platform developed using Java and PostgreSQL. The application simulates an online marketplace where users can register as buyers, sellers, or administrators, list products for sale, and browse available products through a console-based interface.
+
+    Classes & their Functionality
+1. User
+- Base class for all users.
+- Attributes: id, username, password, email, role.
+- Methods: Getters and setters.
+2. Buyer
+- Inherits from User.
+- Specific methods for buyers to browse and search products.
+3. Seller
+- Inherits from User.
+- Methods to add, update, delete, and list their products.
+4. Admin
+- Inherits from User.
+- Methods to view all users and delete a user.
+5. Product
+- Attributes: id, name, price, quantity, sellerId.
+- Methods: Getters and setters.
+6. UserDAO
+- Database access object for users.
+- Methods to create, read, update, and delete users.
+7. ProductDAO
+- Database access object for products.
+- Methods to create, read, update, and delete products.
+8. UserService
+- Contains business logic related to users.
+- Methods for registration, authentication, and role-based actions.
+9. ProductService
+- Contains business logic related to products.
+- Methods for managing products by sellers.
+10. Demo
+Main class to run the application.
+Contains the main menu and navigates based on user role.
+
+
+/////Class Diagram and their relationships - see pic folder please!!!!
+
+    How to Start/Access the Application
+1. Compile the Code: Navigate to the project directory and run javac App.java.
+2. Run the Application: Execute the application with java App.
+3.Register/Login: Follow the prompts to register or login based on your role.
+4. Navigate Menus: Use the menu options to perform actions based on your role.
+
+////////////////////////
+DEVELOPMENT DOCUMENTATION
+
+
+
+Source Code Directory Structure
+
+src/
+|-- Demo.java
+|-- User.java
+|-- Buyer.java
+|-- Seller.java
+|-- Admin.java
+|-- Product.java
+|-- UserDAO.java
+|-- ProductDAO.java
+|-- ProductService.java
+|-- lib/|--postgres.jar
+        |--jbcrypty.jar
+
+
+Build Process
+1. Compile the Project: Run javac *.java in the src directory.
+/////???2. Dependencies: use jar files for the jbcrypt and postgres. 
+
+
+Compiler Time Dependencies
+- PostgreSQL
+- BCrypt library for password hashing
+
+Development Standards
+ -Follow Java naming conventions.
+- Write Javadocs for all classes and methods.
+- Use meaningful variable names and comments.
+
+
+Database Setup for Development
+1. Install PostgreSQL: Ensure PostgreSQL is installed and running.
+2. Create Database and Tables: Run the provided SQL script to set up the database.
+3. Configure Database Connection: Update the database URL, username, and password in the UserDAO and ProductDAO classes.
+
+Source Code Repository
+
+1. Clone Repository by copying the git url
+2. Navigate to the apprpopriate Directory
+3. Compile and Run: & enjoy shopping with us!!! Lol!
+
+
+///////////////////////////
+DEPLOYMENT DOCUMENTATION
+
+Installation Manual
+
+1. System Requirements
+- Java Development Kit (JDK)
+- PostgreSQL 16
+
+2. Installation Steps
+- Step 1: Clone the repository from git
+- Step 2: Install Java and PostgreSQL.
+- Step 3: Set up the PostgreSQL database using the provided SQL script.
+- Step 4: Update the database connection details in the UserDAO and ProductDAO classes accordingly. 
+- Step 5: Compile the Java code using javac *.java.
+- Step 6: Run the application using java App.
+
